@@ -9,7 +9,6 @@ import constants.AnimalConstants;
 import models.Animal;
 import services.AnimalServices;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -34,6 +33,8 @@ public class Main {
         includeSpecialFish();
         includeDolphin();
         includeButterfly();
+        metamorphosisButterfly();
+        getAllAnimals();
     }
 
     /**
@@ -113,6 +114,51 @@ public class Main {
     private static void metamorphosisButterfly() {
         List<Animal> metamorphosisFeature = mAnimalServices.metamorphosisButterflyService();
         System.out.println("metamorphosisButterfly()--->" +metamorphosisFeature.toString());
+    }
+
+    /**
+     * Function to get all animal
+     */
+    private static void getAllAnimals() {
+        List<Animal> allAnimalList = mAnimalServices.getAllAnimalsService();
+        int fly = 0;
+        int walk = 0;
+        int sing = 0;
+        int swim = 0;
+        for (Animal animal : allAnimalList) {
+            if (animal.getAnimalType() == AnimalConstants.AnimalType.LAND_ANIMAL) {
+                walk ++;
+            } else if (animal.getAnimalType() == AnimalConstants.AnimalType.BIRDS) {
+
+                if (animal.getSpecies() == AnimalConstants.Species.PARROT) {
+                    fly = fly + animal.getParrotList().size();
+                    sing = sing + animal.getParrotList().size();
+                } else if (animal.getSpecies() != AnimalConstants.Species.CHICKEN) {
+                    fly++;
+                    sing++;
+                } else {
+                    sing++;
+                }
+
+            } else if (animal.getAnimalType() == AnimalConstants.AnimalType.SEA_ANIMAL) {
+                if (animal.getSpecies()== AnimalConstants.Species.FISH) {
+                    swim = swim + animal.getFishList().size();
+                } else {
+                    swim++;
+                }
+            } else if (animal.getAnimalType() == AnimalConstants.AnimalType.INSECTS) {
+                if (animal.getSpecies()== AnimalConstants.Species.BUTTERFLY) {
+                    fly++;
+                    walk = walk + animal.getMetamorphosisList().size() - 1;
+                }
+            }
+
+        }
+
+        System.out.println("fly----" + fly);
+        System.out.println("walk----" + walk);
+        System.out.println("sing----" + sing);
+        System.out.println("swim----" + swim);
     }
 
 }

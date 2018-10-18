@@ -32,6 +32,11 @@ public class AnimalServicesTest {
      */
     private List<Animal> animalList;
 
+    /**
+     * Variable for all animal list
+     */
+    private List<Animal> animalDataList;
+
 
     /**
      * Function to setup test initialization
@@ -145,6 +150,18 @@ public class AnimalServicesTest {
     }
 
     /**
+     * Function to test getAllAnimalsService
+     * @throws NoSuchFieldException: Handles NoSuchFieldException exception
+     * @throws IllegalAccessException: Handles IllegalAccessException exception
+     */
+    @Test
+    public void getAllAnimalsService_test() throws NoSuchFieldException, IllegalAccessException {
+        setReflectionAllAnimalList();
+        List<Animal> allAnimalList = animalServices.getAllAnimalsService();
+        Assert.assertEquals(animalDataList, allAnimalList);
+    }
+
+    /**
      * Function to reflect animal list
      * @throws NoSuchFieldException: Handles NoSuchFieldException exception
      * @throws IllegalAccessException: Handles IllegalAccessException exception
@@ -156,11 +173,23 @@ public class AnimalServicesTest {
     }
 
     /**
+     * Function to reflect all animal list
+     * @throws NoSuchFieldException: Handles NoSuchFieldException exception
+     * @throws IllegalAccessException: Handles IllegalAccessException exception
+     */
+    private void setReflectionAllAnimalList() throws NoSuchFieldException, IllegalAccessException {
+        Field field = animalServices.getClass().getDeclaredField("animalDataList");
+        field.setAccessible(true);
+        animalDataList = (List<Animal>) field.get(animalServices);
+    }
+
+    /**
      * Function called when test finished
      */
     @After
     public void tearDown() {
         animalServices = null;
         animalList = null;
+        animalDataList = null;
     }
 }

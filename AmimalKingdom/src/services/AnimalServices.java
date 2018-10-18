@@ -27,6 +27,11 @@ public class AnimalServices {
     private List<Animal> animalList = new ArrayList<Animal>();
 
     /**
+     * Initialization of all animal list
+     */
+    private List<Animal> animalDataList = new ArrayList<Animal>();
+
+    /**
      * Function to add bird sing
      * @return List: animal list
      */
@@ -205,6 +210,22 @@ public class AnimalServices {
         butterfly.setMetamorphosisList(MetamorphosisList);
         animalList.add(butterfly);
         return animalList;
+    }
+
+    /**
+     * Function to get all animal data
+     * @return List: animal list
+     */
+    public List<Animal> getAllAnimalsService() {
+        animalDataList.addAll(specialBirdImplService());
+        animalDataList.addAll(roosterBirdImplService());
+        animalDataList.addAll(includeDogService());
+        animalDataList.addAll(includeCatService());
+        animalDataList.addAll(parrotFeatureService());
+        animalDataList.addAll(includeSpecialFishService());
+        animalDataList.addAll(includeDolphinService());
+        animalDataList.addAll(metamorphosisButterflyService());
+        return animalDataList;
     }
 
     /**

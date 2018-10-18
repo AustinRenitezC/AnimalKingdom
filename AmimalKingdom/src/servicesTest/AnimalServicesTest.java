@@ -100,6 +100,15 @@ public class AnimalServicesTest {
     }
 
     /**
+     * Function to test includeFishService
+     */
+    @Test
+    public void includeFishService_test() {
+        List<Animal> fish = animalServices.includeFishService();
+        Assert.assertEquals(animalList, fish);
+    }
+
+    /**
      * Function to reflect animal list
      * @throws NoSuchFieldException: Handles NoSuchFieldException exception
      * @throws IllegalAccessException: Handles IllegalAccessException exception

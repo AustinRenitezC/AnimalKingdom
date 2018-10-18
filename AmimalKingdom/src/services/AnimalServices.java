@@ -108,6 +108,19 @@ public class AnimalServices {
     }
 
     /**
+     * Function to include fish
+     * @return List: animal list
+     */
+    public List<Animal> includeFishService() {
+        animalList.clear();
+        Animal fish = includeAnimalData(AnimalConstants.AnimalName.FISH, AnimalConstants.AnimalType.SEA_ANIMAL,
+                AnimalConstants.Species.FISH, AnimalConstants.MovementType.SWIM,
+                AnimalConstants.AnimalSound.NOT_DESCRIBED);
+        animalList.add(fish);
+        return animalList;
+    }
+
+    /**
      * Function to include general animal data
      * @param type: Type of animal
      * @param movementType: Type of animal movement

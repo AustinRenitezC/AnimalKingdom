@@ -22,6 +22,7 @@ public class AnimalConstants {
     public interface AnimalType {
         int LAND_ANIMAL = 1;
         int BIRDS = 2;
+        int SEA_ANIMAL = 3;
     }
 
     /**
@@ -45,6 +46,7 @@ public class AnimalConstants {
         String PARROT = "Parrot";
         String CAT = "Cat";
         String DOG = "Dog";
+        String FISH = "Fish";
     }
 
     /**
@@ -57,6 +59,7 @@ public class AnimalConstants {
         String MULTIPLE_SOUND = "Multiple sound";
         String DOG_SOUND = "Woof, woof";
         String CAT_SOUND = "Meow";
+        String NOT_DESCRIBED = "Not described";
     }
 
     /**
@@ -68,6 +71,7 @@ public class AnimalConstants {
         int PARROT = 3;
         int DOG = 4;
         int CAT = 5;
+        int FISH = 6;
     }
 
     /**

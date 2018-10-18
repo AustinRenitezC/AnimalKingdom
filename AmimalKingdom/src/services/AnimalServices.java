@@ -10,6 +10,7 @@ package services;
 import constants.AnimalConstants;
 import models.Animal;
 import models.Fish;
+import models.Metamorphosis;
 import models.Parrot;
 
 import java.util.ArrayList;
@@ -183,6 +184,30 @@ public class AnimalServices {
     }
 
     /**
+     * Function to demonstrate metamorphosis of butterfly
+     * @return List: animal list
+     */
+    public List<Animal> metamorphosisButterflyService() {
+        animalList.clear();
+        Animal butterfly = includeAnimalData(AnimalConstants.AnimalName.BUTTERFLY, AnimalConstants.AnimalType.INSECTS,
+                AnimalConstants.Species.BUTTERFLY, AnimalConstants.MovementType.FLY,
+                AnimalConstants.AnimalSound.NO_SOUND);
+        List<Metamorphosis> MetamorphosisList = new ArrayList<Metamorphosis>();
+        Metamorphosis caterpillarStage = includeMetamorphosisData(AnimalConstants.MetamorphosisStages.CATERPILLAR,
+                AnimalConstants.MovementType.CRAWL);
+        MetamorphosisList.add(caterpillarStage);
+        Metamorphosis pupaStage = includeMetamorphosisData(AnimalConstants.MetamorphosisStages.PUPA,
+                AnimalConstants.MovementType.CRAWL);
+        MetamorphosisList.add(pupaStage);
+        Metamorphosis butterflyStage = includeMetamorphosisData(AnimalConstants.MetamorphosisStages.BUTTERFLY,
+                AnimalConstants.MovementType.FLY);
+        MetamorphosisList.add(butterflyStage);
+        butterfly.setMetamorphosisList(MetamorphosisList);
+        animalList.add(butterfly);
+        return animalList;
+    }
+
+    /**
      * Function to include general animal data
      * @param type: Type of animal
      * @param movementType: Type of animal movement
@@ -248,5 +273,18 @@ public class AnimalServices {
         fish.setFishColor(color);
         fish.setOtherFeatures(otherFeature);
         return fish;
+    }
+
+    /**
+     * Function to include metamorphosis data
+     * @param stage: Stage of metamorphosis
+     * @param movement: Movement during metamorphosis
+     * @return metamorphosis: Data of metamorphosis
+     */
+    private Metamorphosis includeMetamorphosisData(String stage, int movement) {
+        Metamorphosis metamorphosis = new Metamorphosis();
+        metamorphosis.setStage(stage);
+        metamorphosis.setMovement(movement);
+        return metamorphosis;
     }
 }

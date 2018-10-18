@@ -9,6 +9,7 @@ import constants.AnimalConstants;
 import models.Animal;
 import services.AnimalServices;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -103,6 +104,15 @@ public class Main {
      */
     private static void includeButterfly() {
         List<Animal> butterflyFeature = mAnimalServices.includeButterflyService();
-        System.out.println("includeButterfly()--->"butterflyFeature.toString());
+        System.out.println("includeButterfly()--->" +butterflyFeature.toString());
     }
+
+    /**
+     * Function for metamorphosis of butterfly
+     */
+    private static void metamorphosisButterfly() {
+        List<Animal> metamorphosisFeature = mAnimalServices.metamorphosisButterflyService();
+        System.out.println("metamorphosisButterfly()--->" +metamorphosisFeature.toString());
+    }
+
 }

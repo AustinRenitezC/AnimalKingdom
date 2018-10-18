@@ -51,6 +51,11 @@ public class Animal {
     private List<Fish> mFishList =  new ArrayList<Fish>();
 
     /**
+     * List containing metamorphosis cycle
+     */
+    private List<Metamorphosis> mMetamorphosisList =  new ArrayList<Metamorphosis>();
+
+    /**
      * Function to get animal type
      * @return int: Type of the animal
      */
@@ -164,6 +169,22 @@ public class Animal {
     }
 
     /**
+     * Function to get metamorphosis cycle
+     * @return List: models.Metamorphosis list
+     */
+    public List<Metamorphosis> getMetamorphosisList() {
+        return mMetamorphosisList;
+    }
+
+    /**
+     * Function to set metamorphosis cycle
+     * @param metamorphosisList: models.Metamorphosis list
+     */
+    public void setMetamorphosisList(List<Metamorphosis> metamorphosisList) {
+        this.mMetamorphosisList = metamorphosisList;
+    }
+
+    /**
      * Function used to print the class items
      * @return String: String value of items
      */
@@ -177,6 +198,7 @@ public class Animal {
                 ", mSpecies=" + mSpecies +
                 ", mParrotList=" + mParrotList +
                 ", mFishList=" + mFishList +
+                ", mMetamorphosisList=" + mMetamorphosisList +
                 '}';
     }
 }

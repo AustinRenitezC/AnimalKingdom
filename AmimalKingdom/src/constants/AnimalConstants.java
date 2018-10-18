@@ -35,6 +35,7 @@ public class AnimalConstants {
         int SWIM = 3;
         int CANNOT_FLY = 4;
         int NOT_DEFINED = 5;
+        int CRAWL = 6;
     }
 
     /**
@@ -133,5 +134,14 @@ public class AnimalConstants {
     public interface FishFeatures {
         String SHARK = "Eats other fish";
         String CLOWN = "make jokes";
+    }
+
+    /**
+     * MetamorphosisStages constants
+     */
+    public interface MetamorphosisStages {
+        String CATERPILLAR = "Caterpillar";
+        String PUPA = "Pupa";
+        String BUTTERFLY = "Butterfly";
     }
 }

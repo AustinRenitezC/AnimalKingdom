@@ -136,6 +136,15 @@ public class AnimalServicesTest {
     }
 
     /**
+     * Function to test metamorphosisButterflyService
+     */
+    @Test
+    public void metamorphosisButterflyService_test() {
+        List<Animal> metamorphosis = animalServices.metamorphosisButterflyService();
+        Assert.assertEquals(animalList, metamorphosis);
+    }
+
+    /**
      * Function to reflect animal list
      * @throws NoSuchFieldException: Handles NoSuchFieldException exception
      * @throws IllegalAccessException: Handles IllegalAccessException exception

@@ -31,6 +31,7 @@ public class Main {
         ParrotFeature();
         includeFish();
         includeSpecialFish();
+        includeDolphin();
     }
 
     /**
@@ -85,6 +86,14 @@ public class Main {
      */
     private static void includeSpecialFish() {
         List<Animal> specialFishFeature = mAnimalServices.includeSpecialFishService();
-        System.out.println(specialFishFeature.toString());
+        System.out.println("includeSpecialFish()--->"+specialFishFeature.toString());
+    }
+
+    /**
+     * Function for dolphin
+     */
+    private static void includeDolphin() {
+        List<Animal> dolphinFeature = mAnimalServices.includeDolphinService();
+        System.out.println("includeDolphin()--->"+dolphinFeature.toString());
     }
 }

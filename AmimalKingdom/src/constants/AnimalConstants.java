@@ -47,6 +47,7 @@ public class AnimalConstants {
         String CAT = "Cat";
         String DOG = "Dog";
         String FISH = "Fish";
+        String DOLPHIN = "Dolphin";
     }
 
     /**
@@ -72,6 +73,7 @@ public class AnimalConstants {
         int DOG = 4;
         int CAT = 5;
         int FISH = 6;
+        int MAMALS = 7;
     }
 
     /**

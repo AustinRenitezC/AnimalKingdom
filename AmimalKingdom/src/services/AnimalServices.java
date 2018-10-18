@@ -157,6 +157,19 @@ public class AnimalServices {
     }
 
     /**
+     * Function to include dolphin
+     * @return List: animal list
+     */
+    public List<Animal> includeDolphinService() {
+        animalList.clear();
+        Animal fish = includeAnimalData(AnimalConstants.AnimalName.DOLPHIN, AnimalConstants.AnimalType.SEA_ANIMAL,
+                AnimalConstants.Species.MAMALS, AnimalConstants.MovementType.SWIM,
+                AnimalConstants.AnimalSound.NOT_DESCRIBED);
+        animalList.add(fish);
+        return animalList;
+    }
+
+    /**
      * Function to include general animal data
      * @param type: Type of animal
      * @param movementType: Type of animal movement

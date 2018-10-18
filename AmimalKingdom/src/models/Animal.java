@@ -46,6 +46,11 @@ public class Animal {
     private List<Parrot> mParrotList = new ArrayList<Parrot>();
 
     /**
+     * List containing fish
+     */
+    private List<Fish> mFishList =  new ArrayList<Fish>();
+
+    /**
      * Function to get animal type
      * @return int: Type of the animal
      */
@@ -143,6 +148,22 @@ public class Animal {
     }
 
     /**
+     * Function to get fish list
+     * @return List: List of fish
+     */
+    public List<Fish> getFishList() {
+        return mFishList;
+    }
+
+    /**
+     * Function to set fish list
+     * @param fishList: List of fish
+     */
+    public void setFishList(List<Fish> fishList) {
+        this.mFishList = fishList;
+    }
+
+    /**
      * Function used to print the class items
      * @return String: String value of items
      */
@@ -155,6 +176,7 @@ public class Animal {
                 ", mSound='" + mSound + '\'' +
                 ", mSpecies=" + mSpecies +
                 ", mParrotList=" + mParrotList +
+                ", mFishList=" + mFishList +
                 '}';
     }
 }

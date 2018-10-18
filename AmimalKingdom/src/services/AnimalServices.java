@@ -9,6 +9,7 @@ package services;
 
 import constants.AnimalConstants;
 import models.Animal;
+import models.Fish;
 import models.Parrot;
 
 import java.util.ArrayList;
@@ -121,6 +122,41 @@ public class AnimalServices {
     }
 
     /**
+     * Function to add special fishes
+     * @return List: animal list
+     */
+    public List<Animal> includeSpecialFishService() {
+        animalList.clear();
+        Animal fish = includeAnimalData(AnimalConstants.AnimalName.FISH, AnimalConstants.AnimalType.SEA_ANIMAL,
+                AnimalConstants.Species.FISH, AnimalConstants.MovementType.SWIM,
+                AnimalConstants.AnimalSound.NOT_DESCRIBED);
+        List<Fish> fishList = new ArrayList<Fish>();
+        int startIndex = 1;
+        int numberOfFish = 2;
+        for (int fishCount = startIndex; fishCount <= numberOfFish; fishCount++) {
+
+            switch (fishCount) {
+                case 1:
+                    Fish shark = includeSpecialFishData(AnimalConstants.FishName.SHARK, AnimalConstants.FishSize.LARGE,
+                            AnimalConstants.FishColor.GREY, AnimalConstants.FishFeatures.SHARK);
+                    fishList.add(shark);
+                    break;
+                case 2:
+                    Fish clown = includeSpecialFishData(AnimalConstants.FishName.CLOWN, AnimalConstants.FishSize.SMALL,
+                            AnimalConstants.FishColor.ORANGE, AnimalConstants.FishFeatures.CLOWN);
+                    fishList.add(clown);
+                    break;
+                default:
+                    System.out.println("default case not handled");
+                    break;
+            }
+        }
+        fish.setFishList(fishList);
+        animalList.add(fish);
+        return animalList;
+    }
+
+    /**
      * Function to include general animal data
      * @param type: Type of animal
      * @param movementType: Type of animal movement
@@ -169,5 +205,22 @@ public class AnimalServices {
         parrotList.add(new Parrot(AnimalConstants.ObjectName.PHONE, AnimalConstants.ObjectSound.RINGING,
                 AnimalConstants.NeighbourType.OBJECT));
         return parrotList;
+    }
+
+    /**
+     * Function to include the fish data
+     * @param name: Name of fish
+     * @param size: Size of fish
+     * @param color: Color of fish
+     * @param otherFeature: Noticeable fish feature
+     * @return fish: Special fish datas
+     */
+    private Fish includeSpecialFishData(String name, String size, String color, String otherFeature) {
+        Fish fish = new Fish();
+        fish.setFishName(name);
+        fish.setFishSize(size);
+        fish.setFishColor(color);
+        fish.setOtherFeatures(otherFeature);
+        return fish;
     }
 }

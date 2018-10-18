@@ -96,4 +96,36 @@ public class AnimalConstants {
     public interface ObjectSound {
         String RINGING = "Ring, ring";
     }
+
+    /**
+     * FishName constants
+     */
+    public interface FishName {
+        String SHARK = "Shark";
+        String CLOWN = "Clown";
+    }
+
+    /**
+     * FishColor constants
+     */
+    public interface FishColor {
+        String GREY = "Grey";
+        String ORANGE = "Orange";
+    }
+
+    /**
+     * FishSize constants
+     */
+    public interface FishSize {
+        String LARGE = "Large";
+        String SMALL = "Small";
+    }
+
+    /**
+     * FishFeatures constants
+     */
+    public interface FishFeatures {
+        String SHARK = "Eats other fish";
+        String CLOWN = "make jokes";
+    }
 }

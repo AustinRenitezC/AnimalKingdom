@@ -9,6 +9,7 @@ package services;
 
 import constants.AnimalConstants;
 import models.Animal;
+import models.Parrot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,6 +67,47 @@ public class AnimalServices {
     }
 
     /**
+     * Function to include Dog
+     * @return List: animal list
+     */
+    public List<Animal> includeDogService() {
+        animalList.clear();
+        Animal dog = includeAnimalData(AnimalConstants.AnimalName.DOG, AnimalConstants.AnimalType.LAND_ANIMAL,
+                AnimalConstants.Species.DOG, AnimalConstants.MovementType.WALK,
+                AnimalConstants.AnimalSound.DOG_SOUND);
+        animalList.add(dog);
+        return animalList;
+    }
+
+    /**
+     * Function to include Cat
+     * @return List: animal list
+     */
+    public List<Animal> includeCatService() {
+        animalList.clear();
+        Animal cat = includeAnimalData(AnimalConstants.AnimalName.CAT, AnimalConstants.AnimalType.LAND_ANIMAL,
+                AnimalConstants.Species.CAT, AnimalConstants.MovementType.WALK,
+                AnimalConstants.AnimalSound.CAT_SOUND);
+        animalList.add(cat);
+        return animalList;
+    }
+
+    /**
+     * Function for parrot feature
+     * @return List: animal list
+     */
+    public List<Animal> parrotFeatureService() {
+        animalList.clear();
+        List<Parrot> maintainableParrot = prepareParrotInput();
+        Animal parrotFeature = includeAnimalData(AnimalConstants.AnimalName.PARROT, AnimalConstants.AnimalType.BIRDS,
+                AnimalConstants.Species.PARROT, AnimalConstants.MovementType.NOT_DEFINED,
+                AnimalConstants.AnimalSound.MULTIPLE_SOUND);
+        parrotFeature.setParrotList(maintainableParrot);
+        animalList.add(parrotFeature);
+        return animalList;
+    }
+
+    /**
      * Function to include general animal data
      * @param type: Type of animal
      * @param movementType: Type of animal movement
@@ -95,5 +137,24 @@ public class AnimalServices {
         animal.setAnimalMovement(movementType);
         animal.setAnimalSound(sound);
         return animal;
+    }
+
+    /**
+     * Function to prepare parrot input
+     * @return List: Input of parrot data
+     */
+    private List<Parrot> prepareParrotInput() {
+        List<Parrot> parrotList = new ArrayList<Parrot>();
+        parrotList.add(new Parrot(AnimalConstants.AnimalName.DOG, AnimalConstants.AnimalSound.DOG_SOUND,
+                AnimalConstants.NeighbourType.LAND_ANIMAL));
+        parrotList.add(new Parrot(AnimalConstants.AnimalName.CAT, AnimalConstants.AnimalSound.CAT_SOUND,
+                AnimalConstants.NeighbourType.LAND_ANIMAL));
+        parrotList.add(new Parrot(AnimalConstants.AnimalName.ROOSTER, AnimalConstants.AnimalSound.ROOSTER_SOUND,
+                AnimalConstants.NeighbourType.BIRDS));
+        parrotList.add(new Parrot(AnimalConstants.AnimalName.DUCK, AnimalConstants.AnimalSound.DUCK_SOUND,
+                AnimalConstants.NeighbourType.BIRDS));
+        parrotList.add(new Parrot(AnimalConstants.ObjectName.PHONE, AnimalConstants.ObjectSound.RINGING,
+                AnimalConstants.NeighbourType.OBJECT));
+        return parrotList;
     }
 }

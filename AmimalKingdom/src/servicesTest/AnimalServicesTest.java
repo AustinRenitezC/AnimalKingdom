@@ -73,6 +73,33 @@ public class AnimalServicesTest {
     }
 
     /**
+     * Function to test includeDogService
+     */
+    @Test
+    public void includeDogService_test() {
+        List<Animal> dog = animalServices.includeDogService();
+        Assert.assertEquals(animalList, dog);
+    }
+
+    /**
+     * Function to test includeCatService
+     */
+    @Test
+    public void includeCatService_test() {
+        List<Animal> cat = animalServices.includeCatService();
+        Assert.assertEquals(animalList, cat);
+    }
+
+    /**
+     * Function to test parrotFeatureService
+     */
+    @Test
+    public void parrotFeatureService_test() {
+        List<Animal> parrot = animalServices.parrotFeatureService();
+        Assert.assertEquals(animalList, parrot);
+    }
+
+    /**
      * Function to reflect animal list
      * @throws NoSuchFieldException: Handles NoSuchFieldException exception
      * @throws IllegalAccessException: Handles IllegalAccessException exception

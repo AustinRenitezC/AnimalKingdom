@@ -28,6 +28,7 @@ public class Main {
         birdsSing();
         SpecialBirdImpl();
         RoosterBirdImpl();
+        ParrotFeature();
     }
 
     /**
@@ -59,5 +60,13 @@ public class Main {
     private static void RoosterBirdImpl() {
         List<Animal> roosterBird = mAnimalServices.roosterBirdImplService();
         System.out.println("RoosterBirdImpl()--->"+roosterBird.toString());
+    }
+
+    /**
+     * Function for parrot
+     */
+    private static void ParrotFeature() {
+        List<Animal> parrotFeature = mAnimalServices.parrotFeatureService();
+        System.out.println("ParrotFeature()--->"+parrotFeature.toString());
     }
 }

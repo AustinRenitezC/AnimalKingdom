@@ -7,6 +7,9 @@
 
 package models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * This class is for animal
  */
@@ -36,6 +39,11 @@ public class Animal {
      * Variable to store species
      */
     private int mSpecies;
+
+    /**
+     * List containing parrot
+     */
+    private List<Parrot> mParrotList = new ArrayList<Parrot>();
 
     /**
      * Function to get animal type
@@ -119,6 +127,22 @@ public class Animal {
     }
 
     /**
+     * Function to get parent list
+     * @return List: Object containing parrot list
+     */
+    public List<Parrot> getParrotList() {
+        return mParrotList;
+    }
+
+    /**
+     * Function to set parrot list
+     * @param parrotList: Object containing parrot list
+     */
+    public void setParrotList(List<Parrot> parrotList) {
+        this.mParrotList = parrotList;
+    }
+
+    /**
      * Function used to print the class items
      * @return String: String value of items
      */
@@ -130,6 +154,7 @@ public class Animal {
                 ", mName='" + mName + '\'' +
                 ", mSound='" + mSound + '\'' +
                 ", mSpecies=" + mSpecies +
+                ", mParrotList=" + mParrotList +
                 '}';
     }
 }

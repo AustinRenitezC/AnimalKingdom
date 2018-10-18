@@ -9,10 +9,14 @@ package modelsTest;
 
 import constants.AnimalConstants;
 import models.Animal;
+import models.Parrot;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -122,6 +126,26 @@ public class AnimalTest {
     public void setSpecies_test() {
         animal.setSpecies(AnimalConstants.Species.CHICKEN);
         Assert.assertEquals(AnimalConstants.Species.CHICKEN, animal.getSpecies());
+    }
+
+    /**
+     * Function to test getParrotList
+     */
+    @Test
+    public void getParrotList_test() {
+        List<Parrot> parrotList = new ArrayList<Parrot>();
+        animal.setParrotList(parrotList);
+        Assert.assertEquals(parrotList, animal.getParrotList());
+    }
+
+    /**
+     * Function to test setParrotList
+     */
+    @Test
+    public void setParrotList_test() {
+        List<Parrot> parrotList = new ArrayList<Parrot>();
+        animal.setParrotList(parrotList);
+        Assert.assertEquals(parrotList, animal.getParrotList());
     }
 
     /**

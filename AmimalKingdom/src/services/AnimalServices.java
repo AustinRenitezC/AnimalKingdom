@@ -170,6 +170,19 @@ public class AnimalServices {
     }
 
     /**
+     * Function to include butterfly
+     * @return List: animal list
+     */
+    public List<Animal> includeButterflyService() {
+        animalList.clear();
+        Animal butterfly = includeAnimalData(AnimalConstants.AnimalName.BUTTERFLY, AnimalConstants.AnimalType.INSECTS,
+                AnimalConstants.Species.BUTTERFLY, AnimalConstants.MovementType.FLY,
+                AnimalConstants.AnimalSound.NO_SOUND);
+        animalList.add(butterfly);
+        return animalList;
+    }
+
+    /**
      * Function to include general animal data
      * @param type: Type of animal
      * @param movementType: Type of animal movement

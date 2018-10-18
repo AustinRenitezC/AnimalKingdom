@@ -127,6 +127,15 @@ public class AnimalServicesTest {
     }
 
     /**
+     * Function to test includeButterflyService
+     */
+    @Test
+    public void includeButterflyService_test() {
+        List<Animal> butterfly = animalServices.includeButterflyService();
+        Assert.assertEquals(animalList, butterfly);
+    }
+
+    /**
      * Function to reflect animal list
      * @throws NoSuchFieldException: Handles NoSuchFieldException exception
      * @throws IllegalAccessException: Handles IllegalAccessException exception

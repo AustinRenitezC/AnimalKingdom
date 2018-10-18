@@ -23,6 +23,7 @@ public class AnimalConstants {
         int LAND_ANIMAL = 1;
         int BIRDS = 2;
         int SEA_ANIMAL = 3;
+        int INSECTS = 4;
     }
 
     /**
@@ -48,6 +49,7 @@ public class AnimalConstants {
         String DOG = "Dog";
         String FISH = "Fish";
         String DOLPHIN = "Dolphin";
+        String BUTTERFLY = "Butterfly";
     }
 
     /**
@@ -61,6 +63,7 @@ public class AnimalConstants {
         String DOG_SOUND = "Woof, woof";
         String CAT_SOUND = "Meow";
         String NOT_DESCRIBED = "Not described";
+        String NO_SOUND = "No Sound";
     }
 
     /**
@@ -74,6 +77,7 @@ public class AnimalConstants {
         int CAT = 5;
         int FISH = 6;
         int MAMALS = 7;
+        int BUTTERFLY = 8;
     }
 
     /**

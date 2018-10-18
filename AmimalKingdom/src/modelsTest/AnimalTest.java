@@ -71,6 +71,42 @@ public class AnimalTest {
     }
 
     /**
+     * Function to test getAnimalName
+     */
+    @Test
+    public void getAnimalName_test() {
+        animal.setAnimalName(AnimalConstants.AnimalName.CHICKEN);
+        Assert.assertEquals(AnimalConstants.AnimalName.CHICKEN, animal.getAnimalName());
+    }
+
+    /**
+     * Function to test setAnimalName
+     */
+    @Test
+    public void setAnimalName_test() {
+        animal.setAnimalName(AnimalConstants.AnimalName.CHICKEN);
+        Assert.assertEquals(AnimalConstants.AnimalName.CHICKEN, animal.getAnimalName());
+    }
+
+    /**
+     * Function to test getAnimalSound
+     */
+    @Test
+    public void getAnimalSound_test() {
+        animal.setAnimalSound(AnimalConstants.AnimalSound.CHICKEN_SOUND);
+        Assert.assertEquals(AnimalConstants.AnimalSound.CHICKEN_SOUND, animal.getAnimalSound());
+    }
+
+    /**
+     * Function to test setAnimalSound
+     */
+    @Test
+    public void setAnimalSound() {
+        animal.setAnimalSound(AnimalConstants.AnimalSound.CHICKEN_SOUND);
+        Assert.assertEquals(AnimalConstants.AnimalSound.CHICKEN_SOUND, animal.getAnimalSound());
+    }
+
+    /**
      * Function to test toString
      */
     @Test

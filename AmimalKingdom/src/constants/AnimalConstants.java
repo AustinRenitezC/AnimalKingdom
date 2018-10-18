@@ -30,5 +30,23 @@ public class AnimalConstants {
     public interface MovementType {
         int WALK = 1;
         int FLY = 2;
+        int SWIM = 3;
+        int CANNOT_FLY = 4;
+    }
+
+    /**
+     * AnimalName constants
+     */
+    public interface AnimalName {
+        String DUCK = "Duck";
+        String CHICKEN = "Chicken";
+    }
+
+    /**
+     * AnimalSound constants
+     */
+    public interface AnimalSound {
+        String DUCK_SOUND = "Quack, quack";
+        String CHICKEN_SOUND = "Cluck, cluck";
     }
 }

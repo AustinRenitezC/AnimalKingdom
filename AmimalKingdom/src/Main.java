@@ -26,6 +26,7 @@ public class Main {
      */
     public static void main(String[] args) {
         birdsSing();
+        SpecialBirdImpl();
     }
 
     /**
@@ -41,5 +42,13 @@ public class Main {
                 System.out.println(AnimalConstants.SINGING);
             }
         }
+    }
+
+    /**
+     * Function for special bird
+     */
+    private static void SpecialBirdImpl() {
+        List<Animal> specialBirdList = mAnimalServices.specialBirdImplService();
+        System.out.println(specialBirdList.toString());
     }
 }

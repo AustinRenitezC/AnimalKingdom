@@ -33,6 +33,11 @@ public class Animal {
     private String mSound;
 
     /**
+     * Variable to store species
+     */
+    private int mSpecies;
+
+    /**
      * Function to get animal type
      * @return int: Type of the animal
      */
@@ -98,6 +103,22 @@ public class Animal {
     }
 
     /**
+     * Function to get animal species
+     * @return int: Species of the animal
+     */
+    public int getSpecies() {
+        return mSpecies;
+    }
+
+    /**
+     * Function to set animal species
+     * @param species: Species of the animal
+     */
+    public void setSpecies(int species) {
+        this.mSpecies = species;
+    }
+
+    /**
      * Function used to print the class items
      * @return String: String value of items
      */
@@ -108,6 +129,7 @@ public class Animal {
                 ", mMovementType=" + mMovementType +
                 ", mName='" + mName + '\'' +
                 ", mSound='" + mSound + '\'' +
+                ", mSpecies=" + mSpecies +
                 '}';
     }
 }

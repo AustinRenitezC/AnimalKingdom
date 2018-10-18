@@ -40,6 +40,7 @@ public class AnimalConstants {
     public interface AnimalName {
         String DUCK = "Duck";
         String CHICKEN = "Chicken";
+        String ROOSTER = "Rooster";
     }
 
     /**
@@ -48,5 +49,14 @@ public class AnimalConstants {
     public interface AnimalSound {
         String DUCK_SOUND = "Quack, quack";
         String CHICKEN_SOUND = "Cluck, cluck";
+        String ROOSTER_SOUND = "Cock-a-doodle-doo";
+    }
+
+    /**
+     * Species constants
+     */
+    public interface Species {
+        int DUCK = 1;
+        int CHICKEN = 2;
     }
 }

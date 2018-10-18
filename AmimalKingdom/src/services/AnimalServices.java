@@ -42,11 +42,26 @@ public class AnimalServices {
     public List<Animal> specialBirdImplService() {
         animalList.clear();
         Animal duck = includeAnimalData(AnimalConstants.AnimalName.DUCK, AnimalConstants.AnimalType.BIRDS,
-                 AnimalConstants.MovementType.SWIM, AnimalConstants.AnimalSound.DUCK_SOUND);
+                AnimalConstants.Species.DUCK, AnimalConstants.MovementType.SWIM, AnimalConstants.AnimalSound
+                        .DUCK_SOUND);
         animalList.add(duck);
         Animal chicken = includeAnimalData(AnimalConstants.AnimalName.CHICKEN, AnimalConstants.AnimalType.BIRDS,
-                AnimalConstants.MovementType.CANNOT_FLY, AnimalConstants.AnimalSound.CHICKEN_SOUND);
+                AnimalConstants.Species.CHICKEN, AnimalConstants.MovementType.CANNOT_FLY,
+                AnimalConstants.AnimalSound.CHICKEN_SOUND);
         animalList.add(chicken);
+        return animalList;
+    }
+
+    /**
+     * Function to handle rooster bird
+     * @return List: animal list
+     */
+    public List<Animal> roosterBirdImplService() {
+        animalList.clear();
+        Animal rooster = includeAnimalData(AnimalConstants.AnimalName.ROOSTER, AnimalConstants.AnimalType.BIRDS,
+                AnimalConstants.Species.CHICKEN, AnimalConstants.MovementType.CANNOT_FLY,
+                AnimalConstants.AnimalSound.ROOSTER_SOUND);
+        animalList.add(rooster);
         return animalList;
     }
 
@@ -67,14 +82,16 @@ public class AnimalServices {
      * Function to include animal data
      * @param name: Name of animal
      * @param type: Type of animal
+     * @param species: Species of the animal
      * @param movementType: Type of animal movement
      * @param sound: Sound of animal
      * @return animal: Data of animal
      */
-    private Animal includeAnimalData(String name, int type, int movementType, String sound) {
+    private Animal includeAnimalData(String name, int type, int species, int movementType, String sound) {
         Animal animal = new Animal() ;
         animal.setAnimalName(name);
         animal.setAnimalType(type);
+        animal.setSpecies(species);
         animal.setAnimalMovement(movementType);
         animal.setAnimalSound(sound);
         return animal;

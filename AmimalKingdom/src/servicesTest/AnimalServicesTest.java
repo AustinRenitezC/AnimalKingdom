@@ -63,6 +63,16 @@ public class AnimalServicesTest {
     }
 
     /**
+     * Function to test roosterBirdImplService
+     */
+    @Test
+    public void roosterBirdImplService_test() {
+        List<Animal> roosterBird = animalServices.roosterBirdImplService();
+        Assert.assertEquals(animalList, roosterBird);
+
+    }
+
+    /**
      * Function to reflect animal list
      * @throws NoSuchFieldException: Handles NoSuchFieldException exception
      * @throws IllegalAccessException: Handles IllegalAccessException exception

@@ -107,6 +107,24 @@ public class AnimalTest {
     }
 
     /**
+     * Function to test getSpecies
+     */
+    @Test
+    public void getSpecies_test() {
+        animal.setSpecies(AnimalConstants.Species.CHICKEN);
+        Assert.assertEquals(AnimalConstants.Species.CHICKEN, animal.getSpecies());
+    }
+
+    /**
+     * Function to test setSpecies
+     */
+    @Test
+    public void setSpecies_test() {
+        animal.setSpecies(AnimalConstants.Species.CHICKEN);
+        Assert.assertEquals(AnimalConstants.Species.CHICKEN, animal.getSpecies());
+    }
+
+    /**
      * Function to test toString
      */
     @Test
